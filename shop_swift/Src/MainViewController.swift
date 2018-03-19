@@ -10,18 +10,15 @@ import UIKit
 import Alamofire
 import ObjectMapper
 
-class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MainViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     var table:UITableView!
     var dataSourceArray = [Main_infoEntity]()
-    
-    
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUpUI()
         loadCellData()
-        loadData()
     }
     
     func setUpUI() {
@@ -30,7 +27,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func setupNavigation() {
-        
+        self.navigationItem.title = "主页"
     }
     func setupTableView() {
         let rect = self.view.frame
@@ -42,6 +39,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         table.delegate = self
         self.view.addSubview(table)
         table.register(UINib.init(nibName: "Main_cell", bundle: nil), forCellReuseIdentifier: "main_cell")
+    
+        self.LJ_update_dataRefreshByScrollview(scroll: table, target: self, action:#selector(loadData), isBegining: true)
+        
     }
     
     func loadCellData() {
@@ -75,7 +75,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
    //MARK：loadData
    //获取数据 @"http://asgapi.99zmall.com/asg/mobile/recruitment/list.json"
     
-    func loadData() {
+    @objc func loadData() {
         let url = "http://asgapi.99zmall.com/asg/mobile/recruitment/list.json"
         LJBaseService.request(url: url, method: .get, successBlock: { (result) in
             let result = Mapper<MainDataModel>().map(JSONObject: result)

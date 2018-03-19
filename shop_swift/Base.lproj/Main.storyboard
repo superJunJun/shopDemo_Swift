@@ -190,8 +190,8 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </tabBar>
                     <connections>
-                        <segue destination="5W7-qc-eNL" kind="relationship" relationship="viewControllers" id="Rbf-kb-RWV"/>
                         <segue destination="yZ9-yP-pp9" kind="relationship" relationship="viewControllers" id="CyL-cr-JDy"/>
+                        <segue destination="5W7-qc-eNL" kind="relationship" relationship="viewControllers" id="Rbf-kb-RWV"/>
                         <segue destination="9Yh-dm-h1N" kind="relationship" relationship="viewControllers" id="yIo-F7-g1S"/>
                         <segue destination="Ouh-Aw-Msa" kind="relationship" relationship="viewControllers" id="eKp-si-6js"/>
                     </connections>
