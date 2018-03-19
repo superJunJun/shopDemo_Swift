@@ -34,22 +34,22 @@ class LJBaseService {
             }
             successBlock?(result)
 
-//            if response.result.isSuccess {
+            if response.result.isSuccess {
 //                successBlock?(response.result.value)
-////                if let dict = response.result.value as? [String: Any] {
-////                    let sta = dict["sta"] as? Int ?? 0
-////                    if sta == 1 {
-////                        successBlock?(dict["data"])
-////                    } else {
-////                        failBlock?(dict["msg"] as? String ?? "网络请求失败")
-////                        if sta == 5 {
-////                            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "TokenInvalidNotification"), object: nil)
-////                        }
-////                    }
-////                }
-//            } else {
-//                failBlock?("网络请求失败")
-//            }
+//                if let dict = response.result.value as? [String: Any] {
+//                    let sta = dict["sta"] as? Int ?? 0
+//                    if sta == 1 {
+//                        successBlock?(dict["data"])
+//                    } else {
+//                        failBlock?(dict["msg"] as? String ?? "网络请求失败")
+//                        if sta == 5 {
+//                            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "TokenInvalidNotification"), object: nil)
+//                        }
+//                    }
+//                }
+            } else {
+                failBlock?("网络请求失败")
+            }
         }
     }
     

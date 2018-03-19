@@ -13,7 +13,8 @@ import ObjectMapper
 class MainViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     var table:UITableView!
     var dataSourceArray = [Main_infoEntity]()
-        
+    var currentpage = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,18 +31,16 @@ class MainViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         self.navigationItem.title = "主页"
     }
     func setupTableView() {
-        let rect = self.view.frame
+        let rect = CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT)
         table = UITableView(frame:rect)
         table.backgroundColor = UIColor.clear
-        table.sectionFooterHeight = 0
-        table.sectionHeaderHeight = 0
         table.dataSource = self
         table.delegate = self
         self.view.addSubview(table)
         table.register(UINib.init(nibName: "Main_cell", bundle: nil), forCellReuseIdentifier: "main_cell")
     
         self.LJ_update_dataRefreshByScrollview(scroll: table, target: self, action:#selector(loadData), isBegining: true)
-        
+        self.LJ_more_dataRefreshByScrollview(scroll: table, target: self, action: #selector(loadMoreData))
     }
     
     func loadCellData() {
@@ -77,7 +76,11 @@ class MainViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     
     @objc func loadData() {
         let url = "http://asgapi.99zmall.com/asg/mobile/recruitment/list.json"
-        LJBaseService.request(url: url, method: .get, successBlock: { (result) in
+        let param = paramDic(pageIndex: 1)
+        
+        LJBaseService.request(url: url, paramter: param as? [String : Any], successBlock: { (result) in
+            self.table.mj_header.endRefreshing()
+
             let result = Mapper<MainDataModel>().map(JSONObject: result)
             if let obj = result {
 //                let res = (obj.contents?.rows![0])! as Main_infoEntity
@@ -92,5 +95,39 @@ class MainViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         }) { (failString) in
 //            print(result ?? "error")
         }
+    }
+    
+    @objc func loadMoreData() {
+        var pageIndex = currentpage + 1
+        if self.dataSourceArray.count == 0 {
+            pageIndex = 1
+        }
+        let url = "http://asgapi.99zmall.com/asg/mobile/recruitment/list.json"
+        let param = paramDic(pageIndex: pageIndex)
+        LJBaseService.request(url: url, paramter: param as? [String : Any] , successBlock: { (result) in
+            self.table.mj_footer.endRefreshing()
+            
+            let result = Mapper<MainDataModel>().map(JSONObject: result)
+            if let obj = result {
+                let infoArr = obj.contents?.rows
+                if ((infoArr?.count) ?? 0 > 0) {
+                    self.dataSourceArray += infoArr!
+                    self.currentpage = pageIndex
+                    
+                    if ((infoArr?.count) ?? 0 < 0) {
+                        self.LJ_no_dataRefreshByScrollView(scroll: self.table)
+                    }
+                    self.table.reloadData()
+                }else {
+                    self.LJ_no_dataRefreshByScrollView(scroll: self.table)
+                }
+            }
+        }) { (failString) in
+            self.table.mj_header.endRefreshing()
+        }
+    }
+    
+    func paramDic(pageIndex: NSInteger) -> NSDictionary {
+        return ["pageSize": 10, "pageIndex": pageIndex, "recommend": 1, "city" : "上海市", "province" : "上海", "lat" : "31.237855" , "lon" : "121.48522"] as NSDictionary
     }
 }
