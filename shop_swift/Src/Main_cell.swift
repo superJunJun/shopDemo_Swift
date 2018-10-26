@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import SDWebImage
+import Kingfisher
+//import SDWebImage
 
 class Main_cell: UITableViewCell {
 
@@ -26,12 +27,12 @@ class Main_cell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         self.selectionStyle = UITableViewCellSelectionStyle
-        .none
+        .none        
     }
     func resetCell(entity: Main_infoEntity) {
         let cellEntity = entity
         
-        headerImageView.sd_setImage(with: URL(string: cellEntity.img!), completed: nil)
+        headerImageView.kf.setImage(with: URL(string: cellEntity.img!), placeholder: nil)
         titlelabel.text = "\(cellEntity.recName ?? "")"
         loactionLabel.text = "\(cellEntity.city ?? "") / \(cellEntity.distance ?? "")"
         payMentLabel.text = "\(cellEntity.payment ?? "")"

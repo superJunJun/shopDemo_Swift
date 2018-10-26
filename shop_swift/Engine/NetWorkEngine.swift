@@ -25,8 +25,20 @@ class LJBaseService {
     }
     
     static func request(url: String, method: HTTPMethod, paramter:[String: Any]?, successBlock: SuccessBlock?, failBlock: FailBlock?) {
-        let headers = setRequestHeader(params: paramter)
-        Alamofire.request(url, method: method, parameters: paramter, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+        
+        
+//        manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+//        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/xml", @"text/xml",@"text/plain",@"application/json",@"text/html",nil];
+
+        
+//        Alamofire.Manager.sharedInstance.session.configuration
+//            .HTTPAdditionalHeaders?.updateValue("application/json",
+//                                                forKey: "Accept")
+        let headers: HTTPHeaders = [
+            "Accept": "application/json"
+        ]
+                
+        Alamofire.request(url, method: method, parameters: paramter, headers: headers).responseJSON { (response) in
             print(response)
             guard let result = response.result.value else {
                 print(response.result.error ?? " --- 网络请求发生了错误 --- ")
@@ -57,7 +69,7 @@ class LJBaseService {
     static func setRequestHeader(params:[String: Any]?) -> [String:String] {
         var parameters = [String: String]()
         
-        parameters["Content-Type"] = "application/json;charset=utf-8"
+        parameters["Content-Type"] = "application/x-www-form-urlencoded"
 //        parameters["iOS"] = "1"
         return parameters
     }

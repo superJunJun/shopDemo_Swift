@@ -16,7 +16,7 @@ class Main_infoEntity: Mappable {
     var recName: String?
     var payAbove: String?
     var payBelow: String?
-    var infoId: String?
+    var infoId: NSInteger?
     var payUnit: String?
     var startDate: String?
     var endDate: String?
@@ -35,7 +35,7 @@ class Main_infoEntity: Mappable {
         recName <- map["recName"]
         payAbove <- map["payAbove"]
         payBelow <- map["payBelow"]
-        infoId <- map["infoId"]
+        infoId <- map["id"]
         payUnit <- map["payUnit"]
         startDate <- map["startDate"]
         endDate <- map["endDate"]
@@ -64,7 +64,6 @@ class MainDataModel: Mappable {
     var status:Int?
     var msg:String?
     var contents:dataObj?
-    init(){}
     required init?(map: Map) {
     }
     

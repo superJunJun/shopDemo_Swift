@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C354E32C7B26C2DEDF175509 /* Pods_shop_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7641982899533B6C9FF734E /* Pods_shop_swift.framework */; };
+		F48C143921819E8F00E834A9 /* ASGJobTopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48C143721819E8F00E834A9 /* ASGJobTopCell.swift */; };
+		F48C143A21819E8F00E834A9 /* ASGJobTopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F48C143821819E8F00E834A9 /* ASGJobTopCell.xib */; };
 		F4F658B3205A22FB00F4971F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F658B2205A22FB00F4971F /* AppDelegate.swift */; };
 		F4F658B5205A22FB00F4971F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F658B4205A22FB00F4971F /* ViewController.swift */; };
 		F4F658B8205A22FB00F4971F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4F658B6205A22FB00F4971F /* Main.storyboard */; };
@@ -22,12 +24,16 @@
 		F4F658ED205BA02900F4971F /* Main_cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F658EB205BA02900F4971F /* Main_cell.swift */; };
 		F4F658EE205BA02900F4971F /* Main_cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4F658EC205BA02900F4971F /* Main_cell.xib */; };
 		F4F658F2205BAE3A00F4971F /* Main_infoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F658F1205BAE3A00F4971F /* Main_infoEntity.swift */; };
+		F4F658FF205FB01E00F4971F /* JobDetail_Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F658FE205FB01E00F4971F /* JobDetail_Controller.swift */; };
+		F4F65905205FBCB400F4971F /* Detail_infoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F65904205FBCB400F4971F /* Detail_infoEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7F39901EF7B18ED51005C36F /* Pods-shop_swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shop_swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-shop_swift/Pods-shop_swift.debug.xcconfig"; sourceTree = "<group>"; };
 		D7641982899533B6C9FF734E /* Pods_shop_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shop_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDEF31DA9751DC441D7195C7 /* Pods-shop_swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shop_swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-shop_swift/Pods-shop_swift.release.xcconfig"; sourceTree = "<group>"; };
+		F48C143721819E8F00E834A9 /* ASGJobTopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASGJobTopCell.swift; sourceTree = "<group>"; };
+		F48C143821819E8F00E834A9 /* ASGJobTopCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ASGJobTopCell.xib; sourceTree = "<group>"; };
 		F4F658AF205A22FB00F4971F /* shop_swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shop_swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4F658B2205A22FB00F4971F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4F658B4205A22FB00F4971F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +52,8 @@
 		F4F658EC205BA02900F4971F /* Main_cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Main_cell.xib; sourceTree = "<group>"; };
 		F4F658F1205BAE3A00F4971F /* Main_infoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main_infoEntity.swift; sourceTree = "<group>"; };
 		F4F658FA205F749700F4971F /* swift-bridge-OC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "swift-bridge-OC.h"; sourceTree = "<group>"; };
+		F4F658FE205FB01E00F4971F /* JobDetail_Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetail_Controller.swift; sourceTree = "<group>"; };
+		F4F65904205FBCB400F4971F /* Detail_infoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail_infoEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +83,15 @@
 				DDEF31DA9751DC441D7195C7 /* Pods-shop_swift.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F432E2242060F2CE002FFE2F /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				F48C143721819E8F00E834A9 /* ASGJobTopCell.swift */,
+				F48C143821819E8F00E834A9 /* ASGJobTopCell.xib */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 		F4F658A6205A22FB00F4971F = {
@@ -151,12 +168,23 @@
 		F4F658E2205A795A00F4971F /* Src */ = {
 			isa = PBXGroup;
 			children = (
+				F4F658FD205FB00000F4971F /* JobDetail */,
 				F4F658E9205B990D00F4971F /* MainViewController.swift */,
 				F4F658F1205BAE3A00F4971F /* Main_infoEntity.swift */,
 				F4F658EB205BA02900F4971F /* Main_cell.swift */,
 				F4F658EC205BA02900F4971F /* Main_cell.xib */,
 			);
 			path = Src;
+			sourceTree = "<group>";
+		};
+		F4F658FD205FB00000F4971F /* JobDetail */ = {
+			isa = PBXGroup;
+			children = (
+				F432E2242060F2CE002FFE2F /* cell */,
+				F4F658FE205FB01E00F4971F /* JobDetail_Controller.swift */,
+				F4F65904205FBCB400F4971F /* Detail_infoEntity.swift */,
+			);
+			path = JobDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,7 +199,6 @@
 				F4F658AC205A22FB00F4971F /* Frameworks */,
 				F4F658AD205A22FB00F4971F /* Resources */,
 				7D4E8094EA7DAE6BD994B5D9 /* [CP] Embed Pods Frameworks */,
-				B9A61D6B7820C67982651F78 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -189,7 +216,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = lijun;
 				TargetAttributes = {
 					F4F658AE205A22FB00F4971F = {
@@ -223,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4F658BD205A22FB00F4971F /* LaunchScreen.storyboard in Resources */,
+				F48C143A21819E8F00E834A9 /* ASGJobTopCell.xib in Resources */,
 				F4F658BA205A22FB00F4971F /* Assets.xcassets in Resources */,
 				F4F658EE205BA02900F4971F /* Main_cell.xib in Resources */,
 				F4F658B8205A22FB00F4971F /* Main.storyboard in Resources */,
@@ -238,51 +266,24 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-shop_swift/Pods-shop_swift-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-shop_swift/Pods-shop_swift-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
-				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/SDCycleScrollView/SDCycleScrollView.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/TTTAttributedLabel/TTTAttributedLabel.framework",
-				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDCycleScrollView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTTAttributedLabel.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-shop_swift/Pods-shop_swift-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B9A61D6B7820C67982651F78 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-shop_swift/Pods-shop_swift-resources.sh",
-				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
-				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-shop_swift/Pods-shop_swift-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-shop_swift/Pods-shop_swift-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F4CFFB384D12030D9D8F7EB4 /* [CP] Check Pods Manifest.lock */ = {
@@ -311,14 +312,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4F658D7205A708100F4971F /* BaseViewController.swift in Sources */,
+				F4F658FF205FB01E00F4971F /* JobDetail_Controller.swift in Sources */,
 				F4F658B5205A22FB00F4971F /* ViewController.swift in Sources */,
 				F4F658ED205BA02900F4971F /* Main_cell.swift in Sources */,
 				F4F658D8205A708100F4971F /* BaseNavigationController.swift in Sources */,
 				F4F658F2205BAE3A00F4971F /* Main_infoEntity.swift in Sources */,
 				F4F658E1205A793800F4971F /* UIColor+Hex.swift in Sources */,
 				F4F658DB205A70A100F4971F /* NetWorkEngine.swift in Sources */,
+				F48C143921819E8F00E834A9 /* ASGJobTopCell.swift in Sources */,
 				F4F658B3205A22FB00F4971F /* AppDelegate.swift in Sources */,
 				F4F658DE205A793100F4971F /* CommonMacro.swift in Sources */,
+				F4F65905205FBCB400F4971F /* Detail_infoEntity.swift in Sources */,
 				F4F658EA205B990D00F4971F /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,6 +363,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -366,6 +371,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -416,6 +422,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -423,6 +430,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

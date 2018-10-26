@@ -84,11 +84,11 @@
             </objects>
             <point key="canvasLocation" x="394" y="1309"/>
         </scene>
-        <!--Item-->
+        <!--我的-->
         <scene sceneID="RIb-3n-Oli">
             <objects>
                 <navigationController id="Ouh-Aw-Msa" customClass="BaseNavigationController" customModule="shop_swift" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="mine_me_n" selectedImage="mine_me_s" id="nyL-Fu-o7e"/>
+                    <tabBarItem key="tabBarItem" title="我的" image="mine_me_n" selectedImage="mine_me_s" id="nyL-Fu-o7e"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bhb-Yg-5Cd">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -130,11 +130,11 @@
             </objects>
             <point key="canvasLocation" x="-242" y="1309"/>
         </scene>
-        <!--Item-->
+        <!--招聘-->
         <scene sceneID="Qd5-Yd-Vyr">
             <objects>
                 <navigationController id="5W7-qc-eNL" customClass="BaseNavigationController" customModule="shop_swift" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="main_recuit" selectedImage="main_recuit_c" id="PBn-Jt-Ovv"/>
+                    <tabBarItem key="tabBarItem" title="招聘" image="main_recuit" selectedImage="main_recuit_c" id="PBn-Jt-Ovv"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="f6Z-gh-HrN">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -147,11 +147,11 @@
             </objects>
             <point key="canvasLocation" x="-252" y="564"/>
         </scene>
-        <!--Item-->
+        <!--主页-->
         <scene sceneID="19h-my-qBm">
             <objects>
                 <navigationController id="yZ9-yP-pp9" customClass="BaseNavigationController" customModule="shop_swift" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="hp_home_n" selectedImage="hp_home_s" id="MhB-Q1-5Cz"/>
+                    <tabBarItem key="tabBarItem" title="主页" image="hp_home_n" selectedImage="hp_home_s" id="MhB-Q1-5Cz"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Bve-9O-3fc">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -164,11 +164,11 @@
             </objects>
             <point key="canvasLocation" x="-1522" y="565"/>
         </scene>
-        <!--Item-->
+        <!--精品-->
         <scene sceneID="HgB-0i-gOe">
             <objects>
                 <navigationController id="9Yh-dm-h1N" customClass="BaseNavigationController" customModule="shop_swift" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="main_mall" selectedImage="main_mall_c" id="kSO-Cq-Ocb"/>
+                    <tabBarItem key="tabBarItem" title="精品" image="main_mall" selectedImage="main_mall_c" id="kSO-Cq-Ocb"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RlK-hP-miw">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

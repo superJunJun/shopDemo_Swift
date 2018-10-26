@@ -14,7 +14,8 @@ class MainViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     var table:UITableView!
     var dataSourceArray = [Main_infoEntity]()
     var currentpage = 1
-    
+    let url = "http://asgapi.99zmall.com/asg/mobile/recruitment/list.json"
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -66,6 +67,12 @@ class MainViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 85
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let info = self.dataSourceArray[indexPath.row]
+        let detailVC = JobDetail_Controller()
+        detailVC.infoId = info.infoId!
+        self.navigationController?.pushViewController(detailVC, animated: true)
+    }
     
 //    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
 //        return 160
@@ -75,10 +82,9 @@ class MainViewController: BaseViewController, UITableViewDelegate, UITableViewDa
    //获取数据 @"http://asgapi.99zmall.com/asg/mobile/recruitment/list.json"
     
     @objc func loadData() {
-        let url = "http://asgapi.99zmall.com/asg/mobile/recruitment/list.json"
-        let param = paramDic(pageIndex: 1)
+        let param = paramDic(pageIndex: 1) as! [String : Any]
         
-        LJBaseService.request(url: url, paramter: param as? [String : Any], successBlock: { (result) in
+        LJBaseService.request(url: url, paramter: param , successBlock: { (result) in
             self.table.mj_header.endRefreshing()
 
             let result = Mapper<MainDataModel>().map(JSONObject: result)
@@ -87,7 +93,7 @@ class MainViewController: BaseViewController, UITableViewDelegate, UITableViewDa
 //                print(res.recName!)
                 let infoArr = obj.contents?.rows
 //                let infoArr = Mapper<Main_infoEntity>().mapArray(JSONArray: (obj.contents?.rows ?? [[String: Any]]()))
-                
+                self.currentpage = 1
                 self.dataSourceArray = infoArr!
                 self.table.reloadData()
 //                self.dataSourceArray += infoArr!
@@ -98,13 +104,13 @@ class MainViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     }
     
     @objc func loadMoreData() {
-        var pageIndex = currentpage + 1
+        var index = currentpage + 1
         if self.dataSourceArray.count == 0 {
-            pageIndex = 1
+            index = 1
         }
-        let url = "http://asgapi.99zmall.com/asg/mobile/recruitment/list.json"
-        let param = paramDic(pageIndex: pageIndex)
-        LJBaseService.request(url: url, paramter: param as? [String : Any] , successBlock: { (result) in
+        let param = paramDic(pageIndex: index) as! [String : Any]
+
+        LJBaseService.request(url: url, paramter: param, successBlock: { (result) in
             self.table.mj_footer.endRefreshing()
             
             let result = Mapper<MainDataModel>().map(JSONObject: result)
@@ -112,7 +118,7 @@ class MainViewController: BaseViewController, UITableViewDelegate, UITableViewDa
                 let infoArr = obj.contents?.rows
                 if ((infoArr?.count) ?? 0 > 0) {
                     self.dataSourceArray += infoArr!
-                    self.currentpage = pageIndex
+                    self.currentpage = index
                     
                     if ((infoArr?.count) ?? 0 < 0) {
                         self.LJ_no_dataRefreshByScrollView(scroll: self.table)
@@ -128,6 +134,6 @@ class MainViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     }
     
     func paramDic(pageIndex: NSInteger) -> NSDictionary {
-        return ["pageSize": 10, "pageIndex": pageIndex, "recommend": 1, "city" : "上海市", "province" : "上海", "lat" : "31.237855" , "lon" : "121.48522"] as NSDictionary
+        return ["pageSize": 10, "pageIndex": pageIndex, "recommend": 1, "city" : "上海市", "province" : "上海", "lat" : 31.237855 , "lon" : 121.48522] as NSDictionary
     }
 }
