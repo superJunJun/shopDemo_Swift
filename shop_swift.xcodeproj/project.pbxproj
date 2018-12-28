@@ -10,6 +10,7 @@
 		C354E32C7B26C2DEDF175509 /* Pods_shop_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7641982899533B6C9FF734E /* Pods_shop_swift.framework */; };
 		F48C143921819E8F00E834A9 /* ASGJobTopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48C143721819E8F00E834A9 /* ASGJobTopCell.swift */; };
 		F48C143A21819E8F00E834A9 /* ASGJobTopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F48C143821819E8F00E834A9 /* ASGJobTopCell.xib */; };
+		F48C143D218809B600E834A9 /* SJAssistor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48C143C218809B500E834A9 /* SJAssistor.swift */; };
 		F4F658B3205A22FB00F4971F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F658B2205A22FB00F4971F /* AppDelegate.swift */; };
 		F4F658B5205A22FB00F4971F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F658B4205A22FB00F4971F /* ViewController.swift */; };
 		F4F658B8205A22FB00F4971F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4F658B6205A22FB00F4971F /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 		DDEF31DA9751DC441D7195C7 /* Pods-shop_swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shop_swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-shop_swift/Pods-shop_swift.release.xcconfig"; sourceTree = "<group>"; };
 		F48C143721819E8F00E834A9 /* ASGJobTopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASGJobTopCell.swift; sourceTree = "<group>"; };
 		F48C143821819E8F00E834A9 /* ASGJobTopCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ASGJobTopCell.xib; sourceTree = "<group>"; };
+		F48C143C218809B500E834A9 /* SJAssistor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SJAssistor.swift; sourceTree = "<group>"; };
 		F4F658AF205A22FB00F4971F /* shop_swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shop_swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4F658B2205A22FB00F4971F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4F658B4205A22FB00F4971F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +96,14 @@
 			path = cell;
 			sourceTree = "<group>";
 		};
+		F48C143B2188097900E834A9 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				F48C143C218809B500E834A9 /* SJAssistor.swift */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
 		F4F658A6205A22FB00F4971F = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +128,7 @@
 				F4F658B2205A22FB00F4971F /* AppDelegate.swift */,
 				F4F658B4205A22FB00F4971F /* ViewController.swift */,
 				F4F658B6205A22FB00F4971F /* Main.storyboard */,
+				F48C143B2188097900E834A9 /* Tool */,
 				F4F658DF205A793800F4971F /* Extension */,
 				F4F658DC205A793100F4971F /* Macros */,
 				F4F658D9205A708800F4971F /* Engine */,
@@ -323,6 +334,7 @@
 				F4F658B3205A22FB00F4971F /* AppDelegate.swift in Sources */,
 				F4F658DE205A793100F4971F /* CommonMacro.swift in Sources */,
 				F4F65905205FBCB400F4971F /* Detail_infoEntity.swift in Sources */,
+				F48C143D218809B600E834A9 /* SJAssistor.swift in Sources */,
 				F4F658EA205B990D00F4971F /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

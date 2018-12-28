@@ -25,7 +25,7 @@ class Detail_infoEntity:  Mappable {
     var basicPay: String?
     var settleAccount: String?
     var releaseTime: String?
-
+    var jobDescription: String?
     var status: String?
     var requirement: String?
     var merLogoImgUrl: String?
@@ -43,45 +43,54 @@ class Detail_infoEntity:  Mappable {
     var workEndDate: String?
     var workStartTime: String?
     var workEndTime: String?
+    var merName: String?
+    var merchant: String?
+
 
     required init?(map: Map) {
     }
 
     func mapping(map: Map) {
+        startTime <- map["startTime"]
+        endTime <- map["endTime"]
+        startDateFormat <- map["startDateFormat"]
+        endDateFormat <- map["endDateFormat"]
+        jobId <- map["jobId"]
         createTime <- map["createTime"]
-        releaseTime <- map["releaseTime"]
         recName <- map["recName"]
-//        payAbove <- map["payAbove"]
-//        payBelow <- map["payBelow"]
-//        infoId <- map["infoId"]
-//        payUnit <- map["payUnit"]
-//        startDate <- map["startDate"]
-//        endDate <- map["endDate"]
-//        city <- map["city"]
-//        img <- map["img"]
-//        logo <- map["logo"]
-//        distance <- map["distance"]
+        position <- map["position"]
+        eduValue <- map["eduValue"]
+        workExp <- map["workExp"]
         payment <- map["payment"]
-    }
-}
-
-class detaildataObj: Mappable {
-    var pageIndex:NSNumber?
-    var pageSize:NSNumber?
-    var rows:[Main_infoEntity]?
-    required init?(map: Map) {
-    }
-    func mapping(map: Map) {
-        pageIndex <- map["pageIndex"]
-        pageSize <- map["pageSize"]
-        rows <- map["rows"]
+        basicPay <- map["basicPay"]
+        settleAccount <- map["settleAccount"]
+        releaseTime <- map["releaseTime"]
+        status <- map["status"]
+        requirement <- map["requirement"]
+        merLogoImgUrl <- map["merLogoImgUrl"]
+        statusValue <- map["statusValue"]
+        recruitNum <- map["recruitNum"]
+        applyCount <- map["applyCount"]
+        fullPartMark <- map["fullPartMark"]
+        welfare <- map["welfare"]
+        latitude <- map["latitude"]
+        longitude <- map["longitude"]
+        applyCompleteC <- map["applyCompleteC"]
+        collectCount <- map["collectCount"]
+        workStartDate <- map["workStartDate"]
+        workEndDate <- map["workEndDate"]
+        workStartTime <- map["workStartTime"]
+        workEndTime <- map["workStartTime"]
+        jobDescription <- map["jobDescription"]
+        merName <- map["merName"]
+        merchant <- map["merchant"]
     }
 }
 
 class DetailDataModel: Mappable {
     var status:Int?
     var msg:String?
-    var contents:detaildataObj?
+    var contents:Detail_infoEntity?
     init(){}
     required init?(map: Map) {
     }

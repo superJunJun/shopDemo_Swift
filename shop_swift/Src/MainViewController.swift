@@ -30,6 +30,10 @@ class MainViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     
     func setupNavigation() {
         self.navigationItem.title = "主页"
+        
+        let dic : Dictionary = ["pageSize": 10, "pageIndex": 2, "recommend": 1, "city" : "上海市", "province" : "上海", "lat" : 31.237855] as [String : Any]
+        
+        
     }
     func setupTableView() {
         let rect = CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT)

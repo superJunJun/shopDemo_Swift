@@ -39,6 +39,7 @@ class JobDetail_Controller: BaseViewController, UITableViewDelegate, UITableView
         table.backgroundColor = UIColor.clear
         table.dataSource = self
         table.delegate = self
+        table.estimatedRowHeight = 300
         self.view.addSubview(table)
         //注册cell
         for reuseId in reuseIdentifiers {
@@ -57,12 +58,8 @@ class JobDetail_Controller: BaseViewController, UITableViewDelegate, UITableView
         super.viewWillAppear(true)
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -74,9 +71,9 @@ class JobDetail_Controller: BaseViewController, UITableViewDelegate, UITableView
         }
     
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 85
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 85
+//    }
     
     //    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
     //        return 160
@@ -86,22 +83,16 @@ class JobDetail_Controller: BaseViewController, UITableViewDelegate, UITableView
     //获取数据 @"http://asgapi.99zmall.com/asg/mobile/recruitment/list.json"
     
     @objc func loadData() {
-        let url = "http://asgapi.99zmall.com/asg/mobile/recruitment/list.json"
-        let param = ["recId": self.infoId]
+        let url = "http://asgapi.99zmall.com/asg/mobile/recruitment/detail.json"
+        let param = ["recId": self.infoId] as [String: Int]
         
-        LJBaseService.request(url: url, paramter: param as? [String : Int], successBlock: { (result) in
+        LJBaseService.request(url: url, paramter: param , successBlock: { (result) in
             self.table.mj_header.endRefreshing()
             
-            let result = Mapper<MainDataModel>().map(JSONObject: result)
+            let result = Mapper<DetailDataModel>().map(JSONObject: result)
             if let obj = result {
-                //                let res = (obj.contents?.rows![0])! as Main_infoEntity
-                //                print(res.recName!)
-//                let infoArr = obj.contents?.rows
-                //                let infoArr = Mapper<Main_infoEntity>().mapArray(JSONArray: (obj.contents?.rows ?? [[String: Any]]()))
-                
-//                self.dataSourceArray = infoArr!
+                self.detailInfo = obj.contents
                 self.table.reloadData()
-                //                self.dataSourceArray += infoArr!
             }
         }) { (failString) in
             //            print(result ?? "error")
